@@ -4,11 +4,14 @@ $color-tertiary: #818fb4;
 $color-background: #f5e8c7;
 
 $font-text: 'Inter Variable', system-ui, sans-serif;
-$font-tittle: 'Montserrat Variable', system-ui, sans-serif;
+$font-title: 'Montserrat Variable', system-ui, sans-serif;
 
 :root {
   --color-primary: #{$color-primary};
   --color-secondary: #{$color-secondary};
   --color-tertiary: #{$color-tertiary};
   --color-background: #{$color-background};
+
+  --font-text: #{$font-text};
+  --font-title: #{$font-title};
 }
