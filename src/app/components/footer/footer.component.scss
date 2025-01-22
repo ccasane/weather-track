@@ -1,0 +1,21 @@
+.footer {
+  background-color: var(--color-primary);
+
+  &__container {
+    max-width: 1800px;
+    margin: auto;
+    padding: 1.8rem 1rem;
+
+    p {
+      color: var(--color-background);
+
+      a {
+        color: var(--color-background);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
