@@ -1,7 +1,7 @@
 .app {
   min-height: 100dvh;
   display: grid;
-  grid-template-columns: 480px 1fr;
+  grid-template-columns: 500px 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     'header header'
@@ -15,7 +15,6 @@
 
 .sidebar {
   grid-area: sidebar;
-  background-color: var(--color-secondary);
 }
 
 .main {
@@ -24,4 +23,15 @@
 
 .footer {
   grid-area: footer;
+}
+
+@media (max-width: 768px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'header'
+      'sidebar'
+      'main'
+      'footer';
+  }
 }
