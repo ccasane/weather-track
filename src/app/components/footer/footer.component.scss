@@ -2,15 +2,15 @@
   background-color: var(--color-primary);
 
   &__container {
-    max-width: 1800px;
-    margin: auto;
-    padding: 1.8rem 1rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
 
     p {
       color: var(--color-background);
 
       a {
         color: var(--color-background);
+        font-family: var(--font-text);
 
         &:hover {
           text-decoration: underline;
