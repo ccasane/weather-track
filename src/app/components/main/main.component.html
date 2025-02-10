@@ -1,71 +1,52 @@
 <main class="main">
   <div class="main__container">
-    <section class="detail">
+    <!-- Sección de detalles -->
+    <section class="detail" *ngIf="currentWeather">
       <div class="information">
-        <h2>New York | 2025-01-23</h2>
+        <h2>
+          {{ currentWeather.name }}
+          <span>{{ currentDate }}</span>
+        </h2>
         <ul>
           <li>
             <strong>Temperatura:</strong>
-            <p>-7.07°C</p>
+            <p>{{ currentWeather.main.temp }}°C</p>
           </li>
           <li>
             <strong>Viento:</strong>
-            <p>1.23 M/S</p>
+            <p>{{ currentWeather.wind.speed }} M/S</p>
           </li>
           <li>
             <strong>Humedad:</strong>
-            <p>42%</p>
+            <p>{{ currentWeather.main.humidity }}%</p>
           </li>
           <li>
             <strong>Visibilidad:</strong>
-            <p>10.0 KM</p>
+            <p>{{ currentWeather.visibility / 1000 }} KM</p>
           </li>
           <li>
             <strong>Nubes:</strong>
-            <p></p>
+            <p>{{ currentWeather.clouds.all }}%</p>
           </li>
           <li>
             <strong>Presión:</strong>
-            <p></p>
+            <p>{{ currentWeather.main.pressure }} hPa</p>
           </li>
         </ul>
       </div>
-      <figure class="icon">
-        <img src="" alt="" />
-      </figure>
     </section>
-    <section class="forecast">
+
+    <section class="forecast" *ngIf="forecast.length">
       <h2>Próximos pronósticos:</h2>
       <div class="forecast-day">
-        <div class="day">
-          <h3>2025-01-24</h3>
-          <p><strong>Temperatura:</strong> 22.58°C</p>
-          <p><strong>Viento:</strong> 4.55 M/S</p>
-          <p><strong>Humedad:</strong> 75%</p>
-        </div>
-        <div class="day">
-          <h3>2025-01-24</h3>
-          <p><strong>Temperatura:</strong> 22.58°C</p>
-          <p><strong>Viento:</strong> 4.55 M/S</p>
-          <p><strong>Humedad:</strong> 75%</p>
-        </div>
-        <div class="day">
-          <h3>2025-01-24</h3>
-          <p><strong>Temperatura:</strong> 22.58°C</p>
-          <p><strong>Viento:</strong> 4.55 M/S</p>
-          <p><strong>Humedad:</strong> 75%</p>
-        </div>
-        <div class="day">
-          <h3>2025-01-24</h3>
-          <p><strong>Temperatura:</strong> 22.58°C</p>
-          <p><strong>Viento:</strong> 4.55 M/S</p>
-          <p><strong>Humedad:</strong> 75%</p>
-        </div>
-        <div class="day">
-          <h3>2025-01-24</h3>
-          <p><strong>Temperatura:</strong> 22.58°C</p>
-          <p><strong>Viento:</strong> 4.55 M/S</p>
-          <p><strong>Humedad:</strong> 75%</p>
+        <div class="day" *ngFor="let day of forecast">
+          <h3>
+            {{ day.day }}
+            <span>{{ day.date }}</span>
+          </h3>
+          <p>Temperatura: {{ day.main.temp }}°C</p>
+          <p>Viento: {{ day.wind.speed }} M/S</p>
+          <p>Humedad: {{ day.main.humidity }}%</p>
         </div>
       </div>
     </section>

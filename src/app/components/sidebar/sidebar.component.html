@@ -1,7 +1,12 @@
 <aside class="sidebar">
   <div class="sidebar__container">
     <h2>Nombre de la ciudad:</h2>
-    <input type="text" placeholder="Por ej. Lima, Tokyo, Chihuahua" />
-    <button>Buscar</button>
+    <input
+      type="text"
+      placeholder="Por ej. Lima, Tokyo, Chihuahua"
+      (keyup.enter)="searchCity(input.value)"
+      #input
+    />
+    <button (click)="searchCity(input.value)">Buscar</button>
   </div>
 </aside>
